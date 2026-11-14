@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>指尖金絲繞・心靈微光手作｜彰化社區大學18週跨齡共學課程</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Noto Serif TC & Noto Sans TC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            linen: '#FAF7F2',
+            cream: '#F3EDE2',
+            parchment: '#EAE0D0',
+            brass: {
+              DEFAULT: '#B8860B',
+              light: '#D4AF37',
+              dark: '#8C6505',
+              soft: '#FBF5E6'
+            },
+            copper: {
+              DEFAULT: '#B87333',
+              light: '#D68E49',
+              dark: '#8A521E',
+              soft: '#F9EFE6'
+            },
+            charcoal: {
+              DEFAULT: '#2C2925',
+              muted: '#5A544C',
+              light: '#7D756B'
+            },
+            sage: {
+              DEFAULT: '#6B8068',
+              soft: '#EEF3ED',
+              dark: '#4D5E4B'
+            },
+            terracotta: {
+              DEFAULT: '#C26D53',
+              soft: '#FAEEEA'
+            }
+          },
+          fontFamily: {
+            serif: ['"Noto Serif TC"', 'serif'],
+            sans: ['"Noto Sans TC"', 'sans-serif'],
+          },
+          boxShadow: {
+            'artisan': '0 10px 30px -10px rgba(184, 115, 51, 0.12), 0 4px 10px -4px rgba(44, 41, 37, 0.05)',
+            'artisan-hover': '0 18px 36px -12px rgba(184, 134, 11, 0.2), 0 6px 14px -4px rgba(44, 41, 37, 0.08)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* 基礎無障礙字級切換變數 */
+    html {
+      font-size: 16px;
+      transition: font-size 0.25s ease;
+    }
+    html.font-large {
+      font-size: 19px;
+    }
+
+    body {
+      background-color: #FAF7F2;
+      color: #2C2925;
+      font-family: 'Noto Sans TC', sans-serif;
+      background-image: radial-gradient(rgba(184, 134, 11, 0.06) 1px, transparent 0);
+      background-size: 28px 28px;
+    }
+
+    /* 金屬光澤文字漸層 */
+    .text-metallic {
+      background: linear-gradient(135deg, #8A521E 0%, #B8860B 45%, #B87333 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* 手作金屬絲線裝飾框線 */
+    .wire-border {
+      border: 1px solid rgba(184, 134, 11, 0.28);
+    }
+
+    /* 自訂捲軸 */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F3EDE2;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #C9B79C;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #B87333;
+    }
+
+    /* 列印專用樣式 */
+    @media print {
+      body {
+        background: #FFFFFF !important;
+        color: #000000 !important;
+        font-size: 12pt !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .print-break-inside {
+        break-inside: avoid;
+      }
+      .shadow-artisan, .shadow-sm, .shadow-md {
+        box-shadow: none !important;
+      }
+      table {
+        border-collapse: collapse !important;
+        width: 100% !important;
+      }
+      th, td {
+        border: 1px solid #CCCCCC !important;
+        padding: 8px !important;
+      }
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-brass/20 selection:text-charcoal">
+
+  <!-- 頂部導覽列 (Sticky Navigation) -->
+  <header class="sticky top-0 z-50 bg-linen/95 backdrop-blur-md border-b border-brass/20 shadow-sm no-print">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-wrap items-center justify-between py-3 gap-3">
+        <!-- 品牌識別 -->
+        <a href="#top" class="flex items-center gap-2.5 group">
+          <div class="w-9 h-9 rounded-full bg-gradient-to-br from-brass to-copper flex items-center justify-center text-white shadow-sm group-hover:scale-105 transition-transform">
+            <!-- 金屬線圈圖示 -->
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M12 3C7.03 3 3 7.03 3 12s4.03 9 9 9c3.86 0 7.15-2.43 8.43-5.85" stroke-linecap="round"/>
+              <path d="M12 6.5c-3.04 0-5.5 2.46-5.5 5.5s2.46 5.5 5.5 5.5 5.5-2.46 5.5-5.5c0-1.6-.68-3.04-1.77-4.05" stroke-linecap="round"/>
+              <circle cx="12" cy="12" r="2" fill="currentColor"/>
+            </svg>
+          </div>
+          <div>
+            <span class="block font-serif font-bold text-base sm:text-lg text-charcoal tracking-wide">指尖金絲繞</span>
+            <span class="block text-xs text-copper-dark font-medium">彰化社區大學・18週課程</span>
+          </div>
+        </a>
+
+        <!-- 導覽連結 (桌機版) -->
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-charcoal-muted">
+          <a href="#overview" class="hover:text-brass-dark transition-colors py-1">課程理念與目標</a>
+          <a href="#features" class="hover:text-brass-dark transition-colors py-1">修課與授課方式</a>
+          <a href="#lesson-design" class="hover:text-brass-dark transition-colors py-1">單週教學設計</a>
+          <a href="#syllabus" class="hover:text-brass-dark transition-colors py-1">18週課程大綱</a>
+        </nav>
+
+        <!-- 樂齡友善功能區：字體大小切換 & 列印課綱 -->
+        <div class="flex items-center gap-2">
+          <button id="fontSizeToggle" type="button" aria-label="切換字體大小"
+            class="inline-flex items-center gap-1.5 px-3 py-2 rounded-full text-xs sm:text-sm font-medium bg-cream hover:bg-parchment text-charcoal border border-brass/30 transition-all cursor-pointer">
+            <svg class="w-4 h-4 text-brass-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 7V4h16v3M9 20h6M12 4v16" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span id="fontSizeLabel">字體：標準</span>
+          </button>
+
+          <button onclick="window.print()" type="button"
+            class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs sm:text-sm font-medium bg-gradient-to-r from-brass to-copper text-white hover:opacity-95 shadow-sm transition-all cursor-pointer">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="6" y="14" width="12" height="8" rx="1"/>
+            </svg>
+            <span class="hidden sm:inline">列印 / 儲存課綱</span>
+            <span class="sm:hidden">列印</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 手機版快速錨點列 -->
+      <div class="flex md:hidden items-center justify-around border-t border-brass/15 py-2 text-xs font-medium text-charcoal-muted overflow-x-auto">
+        <a href="#overview" class="px-2 py-1 hover:text-brass-dark whitespace-nowrap">課程總覽</a>
+        <a href="#features" class="px-2 py-1 hover:text-brass-dark whitespace-nowrap">授課與發展</a>
+        <a href="#lesson-design" class="px-2 py-1 hover:text-brass-dark whitespace-nowrap">教學設計</a>
+        <a href="#syllabus" class="px-2 py-1 hover:text-brass-dark whitespace-nowrap">18週大綱</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主視覺區 (Hero Section) -->
+  <section id="top" class="relative overflow-hidden pt-10 pb-14 sm:pt-16 sm:pb-20 border-b border-brass/15">
+    <!-- 背景工藝金絲線條裝飾 SVG -->
+    <svg class="absolute top-0 right-0 w-72 sm:w-[460px] h-auto text-brass/15 pointer-events-none select-none" viewBox="0 0 400 400" fill="none">
+      <path d="M380 -20 C 320 120, 180 60, 140 190 C 100 320, 260 360, 420 280" stroke="currentColor" stroke-width="2"/>
+      <path d="M410 30 C 340 150, 210 90, 170 220 C 130 350, 290 380, 430 310" stroke="currentColor" stroke-width="1.2" stroke-dasharray="6 6"/>
+      <circle cx="155" cy="205" r="28" stroke="currentColor" stroke-width="1.5"/>
+      <circle cx="155" cy="205" r="18" stroke="currentColor" stroke-width="1"/>
+    </svg>
+
+    <svg class="absolute bottom-0 left-0 w-64 sm:w-96 h-auto text-copper/15 pointer-events-none select-none" viewBox="0 0 300 300" fill="none">
+      <path d="M-30 260 C 60 220, 80 120, 170 140 C 260 160, 220 270, 290 310" stroke="currentColor" stroke-width="2"/>
+      <circle cx="170" cy="140" r="14" stroke="currentColor" stroke-width="1.5"/>
+    </svg>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <!-- 機構與對象標籤 -->
+      <div class="inline-flex flex-wrap items-center justify-center gap-2 mb-6">
+        <span class="px-4 py-1.5 rounded-full bg-brass-soft border border-brass/30 text-brass-dark font-semibold text-xs sm:text-sm tracking-wider">
+          🏛️ 彰化社區大學・18週秋季/春季精選課程
+        </span>
+        <span class="px-4 py-1.5 rounded-full bg-sage-soft border border-sage/30 text-sage-dark font-semibold text-xs sm:text-sm">
+          🤝 20～80歲跨世代共學
+        </span>
+      </div>
+
+      <!-- 課程名稱 (主標題) -->
+      <h1 class="font-serif font-black text-3xl sm:text-5xl lg:text-6xl tracking-tight mb-5 leading-tight text-charcoal">
+        <span class="text-metallic">指尖金絲繞・心靈微光手作</span>
+      </h1>
+
+      <!-- 副標題 -->
+      <p class="max-w-2xl mx-auto text-base sm:text-xl text-charcoal-muted leading-relaxed mb-8 font-normal">
+        一條溫潤的金屬線，串起青銀世代的對話與陪伴。<br class="hidden sm:inline" />
+        在纏繞與塑形之間安頓身心，結合數位素養與在地情懷，編織屬於您的生命微光。
+      </p>
+
+      <!-- 三大核心亮點標籤 -->
+      <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-9">
+        <div class="flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white/90 shadow-artisan wire-border">
+          <span class="w-2.5 h-2.5 rounded-full bg-copper"></span>
+          <span class="font-semibold text-sm sm:text-base text-charcoal">純手工金屬線編織</span>
+        </div>
+        <div class="flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white/90 shadow-artisan wire-border">
+          <span class="w-2.5 h-2.5 rounded-full bg-sage"></span>
+          <span class="font-semibold text-sm sm:text-base text-charcoal">社會情緒學習 (SEL)</span>
+        </div>
+        <div class="flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white/90 shadow-artisan wire-border">
+          <span class="w-2.5 h-2.5 rounded-full bg-brass"></span>
+          <span class="font-semibold text-sm sm:text-base text-charcoal">數位資訊素養與AI應用</span>
+        </div>
+      </div>
+
+      <!-- 快速行動按鈕 -->
+      <div class="flex flex-wrap items-center justify-center gap-3 no-print">
+        <a href="#syllabus" class="px-6 py-3 rounded-full bg-charcoal text-linen font-medium text-sm sm:text-base hover:bg-brass-dark transition-colors shadow-md">
+          瀏覽 18 週完整課綱 ↓
+        </a>
+        <a href="#lesson-design" class="px-6 py-3 rounded-full bg-white text-charcoal border border-brass/40 font-medium text-sm sm:text-base hover:bg-brass-soft transition-colors">
+          查看亮點單週教案
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 主要內容容器 -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-16">
+
+    <!-- 區塊一：課程理念與課程目標 -->
+    <section id="overview" class="scroll-mt-24">
+      <div class="text-center mb-10">
+        <span class="text-xs font-bold tracking-widest uppercase text-copper">COURSE PHILOSOPHY & GOALS</span>
+        <h2 class="font-serif font-bold text-2xl sm:text-3xl text-charcoal mt-1">課程理念與教學目標</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-brass to-copper mx-auto mt-3 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8">
+        <!-- 課程理念卡片 (佔5欄) -->
+        <div class="lg:col-span-5 bg-gradient-to-br from-brass-soft via-white to-copper-soft rounded-3xl p-6 sm:p-8 shadow-artisan wire-border flex flex-col justify-between print-break-inside">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brass/15 text-brass-dark text-xs font-bold mb-4">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              課程核心理念
+            </div>
+            <h3 class="font-serif font-bold text-xl sm:text-2xl text-charcoal mb-4">在金絲纏繞中安頓身心</h3>
+            <p class="text-charcoal text-base sm:text-lg leading-relaxed font-medium">
+              「透過金屬線編織舒緩情緒壓力，結合數位搜尋與AI靈感應用，讓跨世代學員在創作中安頓身心，打造專屬的療癒工藝美學。」
+            </p>
+          </div>
+          
+          <div class="mt-6 pt-5 border-t border-brass/20 flex items-center justify-between text-xs sm:text-sm text-charcoal-muted">
+            <span>授課時數：18週（含公民素養週與成果展）</span>
+            <span class="font-serif font-semibold text-copper-dark">零基礎友善</span>
+          </div>
+        </div>
+
+        <!-- 課程目標卡片 (佔7欄) -->
+        <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 shadow-artisan wire-border print-break-inside">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sage-soft text-sage-dark text-xs font-bold mb-4">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+            </svg>
+            全方位課程目標
+          </div>
+          <h3 class="font-serif font-bold text-xl sm:text-2xl text-charcoal mb-3">工藝 × 情緒 × 數位 × 在地連結</h3>
+          <p class="text-charcoal-muted text-base leading-relaxed mb-6">
+            因應現代生活壓力與數位落差，本課程結合工藝美學、社會情緒學習與資訊素養。透過金屬線特性與編織技法教學，培養學員專注力、耐心與情緒覺察；並引導運用網路搜尋靈感、防範網購材料詐騙，在跨齡共學中建立自信，連結彰化在地文化與社區情誼。
+          </p>
+
+          <!-- 四大目標面向微標籤 -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+            <div class="p-3.5 rounded-2xl bg-linen border border-brass/15">
+              <span class="font-bold text-copper-dark block mb-1">✦ 知識與技能</span>
+              <span class="text-charcoal-muted">掌握金屬線材特性、繞線包鑲與維京編織工藝。</span>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-linen border border-brass/15">
+              <span class="font-bold text-sage-dark block mb-1">✦ 品德與情緒態度</span>
+              <span class="text-charcoal-muted">提升專注力、挫折容忍度與自我情緒覺察。</span>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-linen border border-brass/15">
+              <span class="font-bold text-brass-dark block mb-1">✦ 資訊素養與防詐</span>
+              <span class="text-charcoal-muted">善用AI與搜尋靈感，辨識一頁式材料詐騙。</span>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-linen border border-brass/15">
+              <span class="font-bold text-terracotta block mb-1">✦ 社區與文化連結</span>
+              <span class="text-charcoal-muted">青銀互助共學，融入彰化地標與在地情感。</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 區塊二：條件限制、授課方式、未來發展計畫 -->
+    <section id="features" class="scroll-mt-24">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- 條件限制 -->
+        <div class="bg-white rounded-3xl p-6 sm:p-7 shadow-artisan wire-border flex flex-col print-break-inside">
+          <div class="w-11 h-11 rounded-2xl bg-copper-soft text-copper-dark flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+            </svg>
+          </div>
+          <h3 class="font-serif font-bold text-xl text-charcoal mb-3">學員條件限制</h3>
+          <p class="text-charcoal-muted text-sm sm:text-base leading-relaxed flex-grow">
+            本課程為<strong class="text-charcoal font-semibold">初階入門</strong>，歡迎 <strong class="text-copper-dark font-semibold">20至80歲</strong> 對手工藝有興趣的民眾報名，無需任何金工或編織基礎。學員需具備基本的手部精細動作能力與視力（可配戴老花眼鏡），並請自備可上網之智慧型手機，以利課堂進行數位靈感搜尋與作品紀錄。
+          </p>
+        </div>
+
+        <!-- 授課方式 -->
+        <div class="bg-white rounded-3xl p-6 sm:p-7 shadow-artisan wire-border flex flex-col print-break-inside">
+          <div class="w-11 h-11 rounded-2xl bg-sage-soft text-sage-dark flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="font-serif font-bold text-xl text-charcoal mb-3">多元授課方式</h3>
+          <p class="text-xs text-charcoal-light mb-3">兼顧步驟拆解、個別關懷與跨齡互動：</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-xl bg-linen border border-brass/20 text-charcoal text-xs sm:text-sm font-medium">講師示範與實際操作</span>
+            <span class="px-3 py-1.5 rounded-xl bg-linen border border-brass/20 text-charcoal text-xs sm:text-sm font-medium">個別指導與反覆練習</span>
+            <span class="px-3 py-1.5 rounded-xl bg-linen border border-brass/20 text-charcoal text-xs sm:text-sm font-medium">實物觀賞及樣品教學</span>
+            <span class="px-3 py-1.5 rounded-xl bg-linen border border-brass/20 text-charcoal text-xs sm:text-sm font-medium">團體互動及小組活動</span>
+            <span class="px-3 py-1.5 rounded-xl bg-linen border border-brass/20 text-charcoal text-xs sm:text-sm font-medium">案例討論與心得分享</span>
+            <span class="px-3 py-1.5 rounded-xl bg-linen border border-brass/20 text-charcoal text-xs sm:text-sm font-medium">主題探討或簡報介紹</span>
+          </div>
+        </div>
+
+        <!-- 發展計畫 -->
+        <div class="bg-white rounded-3xl p-6 sm:p-7 shadow-artisan wire-border flex flex-col print-break-inside">
+          <div class="w-11 h-11 rounded-2xl bg-brass-soft text-brass-dark flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="font-serif font-bold text-xl text-charcoal mb-3">課程延續與發展計畫</h3>
+          <p class="text-charcoal-muted text-sm sm:text-base leading-relaxed flex-grow">
+            未來將開設進階課程，結合<strong class="text-charcoal font-semibold">天然礦石鑲嵌</strong>與<strong class="text-charcoal font-semibold">彰化在地意象設計</strong>，並輔導學員運用社群平台建立個人微品牌，推展社區文創市集。
+          </p>
+          <div class="mt-4 pt-3 border-t border-brass/15 text-xs text-brass-dark font-medium">
+            → 從興趣療癒邁向社區文創微型創業
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 區塊三：亮點單週教學設計 (第4週) -->
+    <section id="lesson-design" class="scroll-mt-24 print-break-inside">
+      <div class="bg-gradient-to-r from-[#2C2925] via-[#3A352F] to-[#2C2925] text-linen rounded-3xl p-6 sm:p-10 shadow-artisan relative overflow-hidden">
+        <!-- 裝飾金線圈 -->
+        <div class="absolute -right-12 -bottom-12 w-56 h-56 rounded-full border border-brass-light/20 pointer-events-none"></div>
+        <div class="absolute -right-6 -bottom-6 w-40 h-40 rounded-full border border-brass-light/30 pointer-events-none"></div>
+
+        <div class="relative z-10">
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+            <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brass/25 border border-brass-light/40 text-brass-light text-xs sm:text-sm font-semibold">
+              ✨ 課程亮點・單週教學設計範例
+            </span>
+            <span class="text-xs sm:text-sm text-parchment/80 font-serif">第 4 週主題示範</span>
+          </div>
+
+          <h2 class="font-serif font-bold text-2xl sm:text-3xl text-white mb-4">
+            第4週〈生命樹情緒療癒吊墜〉教學設計流程
+          </h2>
+
+          <p class="text-parchment text-base sm:text-lg leading-relaxed mb-8 max-w-4xl">
+            「以情緒牌卡覺察自我，用手機搜尋靈感並辨識真偽資訊，隨後示範樹幹纏繞技法，最後小組分享作品故事。」
+          </p>
+
+          <!-- 四步驟視覺化流程圖 -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-4">
+              <div class="text-brass-light font-serif font-bold text-sm mb-1">STEP 01｜情緒暖身</div>
+              <div class="font-semibold text-white text-base mb-1">情緒牌卡自我覺察</div>
+              <p class="text-xs text-parchment/85 leading-relaxed">透過牌卡引導學員探索近期內在狀態與生命力量，設定創作意象。</p>
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-4">
+              <div class="text-brass-light font-serif font-bold text-sm mb-1">STEP 02｜資訊素養</div>
+              <div class="font-semibold text-white text-base mb-1">手機搜尋與真偽辨識</div>
+              <p class="text-xs text-parchment/85 leading-relaxed">練習關鍵字搜尋生命樹造型靈感，同步練習分辨AI合成圖與真實手作作品。</p>
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-4">
+              <div class="text-brass-light font-serif font-bold text-sm mb-1">STEP 03｜工藝實作</div>
+              <div class="font-semibold text-white text-base mb-1">多股樹幹纏繞技法</div>
+              <p class="text-xs text-parchment/85 leading-relaxed">講師逐步示範銅線扭轉樹根、分枝與樹冠收邊，個別指導調整手感。</p>
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-4">
+              <div class="text-brass-light font-serif font-bold text-sm mb-1">STEP 04｜跨齡共鳴</div>
+              <div class="font-semibold text-white text-base mb-1">小組分享作品故事</div>
+              <p class="text-xs text-parchment/85 leading-relaxed">青銀學員輪流分享創作寓意，在傾聽與肯定中深化人際連結。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 區塊四：18週完整課程大綱 -->
+    <section id="syllabus" class="scroll-mt-24">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
+        <div>
+          <span class="text-xs font-bold tracking-widest uppercase text-copper">18-WEEK CURRICULUM</span>
+          <h2 class="font-serif font-bold text-2xl sm:text-3xl text-charcoal mt-1">18週完整課程大綱</h2>
+        </div>
+
+        <!-- 主題篩選器 (不影響列印) -->
+        <div class="flex flex-wrap items-center gap-2 no-print" role="tablist" aria-label="課程大綱篩選">
+          <button type="button" data-filter="all" class="filter-btn active px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-charcoal text-linen transition-all cursor-pointer">
+            全部 18 週
+          </button>
+          <button type="button" data-filter="craft" class="filter-btn px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-white text-charcoal-muted border border-brass/25 hover:bg-brass-soft transition-all cursor-pointer">
+            工藝技法
+          </button>
+          <button type="button" data-filter="sel" class="filter-btn px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-white text-charcoal-muted border border-brass/25 hover:bg-sage-soft transition-all cursor-pointer">
+            社會情緒學習
+          </button>
+          <button type="button" data-filter="digital" class="filter-btn px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-white text-charcoal-muted border border-brass/25 hover:bg-brass-soft transition-all cursor-pointer">
+            資訊素養與AI
+          </button>
+          <button type="button" data-filter="local" class="filter-btn px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-white text-charcoal-muted border border-brass/25 hover:bg-terracotta-soft transition-all cursor-pointer">
+            彰化在地與展演
+          </button>
+        </div>
+      </div>
+
+      <!-- 課綱表格卡片容器 -->
+      <div class="bg-white rounded-3xl shadow-artisan wire-border overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-cream border-b border-brass/25 text-charcoal font-serif">
+                <th class="py-4 px-4 sm:px-6 text-sm sm:text-base font-bold w-24 sm:w-28 whitespace-nowrap">週</th>
+                <th class="py-4 px-4 sm:px-6 text-sm sm:text-base font-bold w-1/3 min-w-[180px]">主題</th>
+                <th class="py-4 px-4 sm:px-6 text-sm sm:text-base font-bold">內容</th>
+              </tr>
+            </thead>
+            <tbody id="syllabusBody" class="divide-y divide-brass/15 text-sm sm:text-base">
+              <!-- 由 JavaScript 動態渲染 1~18 週內容，確保篩選與結構精準一致 -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 底部溫馨提示 -->
+      <p class="text-xs sm:text-sm text-charcoal-light mt-4 text-right">
+        ※ 實際教學進度將依學員現場學習狀況適度微調；材料包與基礎工具可於第一週開課時由講師說明團購或自備方式。
+      </p>
+    </section>
+
+  </main>
+
+  <!-- 頁尾 (Footer) -->
+  <footer class="bg-cream border-t border-brass/20 py-10 mt-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <div>
+        <div class="font-serif font-bold text-lg text-charcoal">指尖金絲繞・心靈微光手作</div>
+        <p class="text-xs sm:text-sm text-charcoal-muted mt-1">彰化社區大學 18週跨齡共學課程計畫｜融合工藝美學、社會情緒學習與數位資訊素養</p>
+      </div>
+      <div class="no-print">
+        <a href="#top" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white border border-brass/30 text-xs sm:text-sm font-medium text-charcoal hover:bg-brass-soft transition-colors">
+          回到頂端 ↑
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 互動腳本 -->
+  <script>
+    // 18週完整課程資料陣列 (完全忠實呈現所有指定文字)
+    const syllabusData = [
+      {
+        week: "第1週",
+        title: "相見歡與金絲初體驗",
+        content: "認識課程與跨齡夥伴；介紹銅線特性與安全工具使用。練習基礎捲線與情緒溫度計分享，開啟療癒手作第一步。",
+        tags: ["craft", "sel"],
+        badges: [{ text: "工藝基礎", type: "craft" }, { text: "情緒覺察", type: "sel" }]
+      },
+      {
+        week: "第2週",
+        title: "幾何線條與專注力練習",
+        content: "學習基礎繞線與平口鉗運用，製作簡約幾何書籤。在重複塑形中練習正念呼吸，覺察並安頓日常焦慮情緒。",
+        tags: ["craft", "sel"],
+        badges: [{ text: "工藝基礎", type: "craft" }, { text: "正念減壓", type: "sel" }]
+      },
+      {
+        week: "第3週",
+        title: "數位靈感庫與網購防詐",
+        content: "學習使用關鍵字與Pinterest搜尋設計圖；建立資訊素養，教導辨識一頁式材料詐騙網頁與安全網購管道。",
+        tags: ["digital"],
+        badges: [{ text: "資訊素養", type: "digital" }, { text: "網購防詐", type: "digital" }]
+      },
+      {
+        week: "第4週",
+        title: "生命樹情緒療癒吊墜",
+        content: "結合情緒牌卡探索內在力量；示範多股銅線扭轉與樹枝纏繞技法，完成象徵自我成長的生命樹項鍊墜飾。",
+        tags: ["craft", "sel"],
+        badges: [{ text: "核心工藝", type: "craft" }, { text: "SEL教案", type: "sel" }]
+      },
+      {
+        week: "第5週",
+        title: "珠光交織・經典包框戒",
+        content: "學習將天然珍珠或琉璃珠穩定包覆於金屬線中。透過反覆調整線條張力，培養面對挫折的耐心與解決問題能力。",
+        tags: ["craft", "sel"],
+        badges: [{ text: "包框技法", type: "craft" }, { text: "挫折耐受力", type: "sel" }]
+      },
+      {
+        week: "第6週",
+        title: "聆聽彼此・雙人協作手環",
+        content: "練習麻花編織與鉤扣製作。採跨齡分組互助，練習清晰表達需求與傾聽夥伴，在合作中建立人際信任感。",
+        tags: ["craft", "sel"],
+        badges: [{ text: "麻花編織", type: "craft" }, { text: "人際溝通", type: "sel" }]
+      },
+      {
+        week: "第7週",
+        title: "AI小幫手與配色美學",
+        content: "介紹簡易AI工具輔助發想飾品配色與草圖；討論AI生成圖片的版權與真實性，培養正確的數位媒體識讀觀念。",
+        tags: ["digital"],
+        badges: [{ text: "AI靈感應用", type: "digital" }, { text: "媒體識讀", type: "digital" }]
+      },
+      {
+        week: "第8週",
+        title: "復古氧化做舊與拋光工藝",
+        content: "學習利用硫磺精進行安全做舊處理，並以銅刷拋光展現層次感。在時間與化學變化中，體會接納不完美的生命哲學。",
+        tags: ["craft", "sel"],
+        badges: [{ text: "表面處理", type: "craft" }, { text: "生命哲學", type: "sel" }]
+      },
+      {
+        week: "第9週",
+        title: "公民素養週",
+        content: "由彰化社區大學安排",
+        tags: ["all"],
+        isCivicWeek: true,
+        badges: []
+      },
+      {
+        week: "第10週",
+        title: "維京編織・古法立體鍊條",
+        content: "學習歷史悠久的維京針織技法，運用編織器拉出立體圓管狀金屬鍊。訓練手眼協調與高度專注力，體驗心流狀態。",
+        tags: ["craft", "sel"],
+        badges: [{ text: "維京編織", type: "craft" }, { text: "心流專注", type: "sel" }]
+      },
+      {
+        week: "第11週",
+        title: "彰化意象・八卦山大佛與線條",
+        content: "融入在地文化，觀察彰化地標建築與自然線條，設計專屬家鄉紀念別針，深化對土地的認同感與社區歸屬感。",
+        tags: ["craft", "local"],
+        badges: [{ text: "彰化在地", type: "local" }, { text: "社區認同", type: "sel" }]
+      },
+      {
+        week: "第12週",
+        title: "隨形礦石・不規則包鑲技法",
+        content: "挑戰無固定形狀的天然原石包鑲。引導學員順應礦石紋理調整線條，學習在變動中保持彈性與情緒穩定。",
+        tags: ["craft", "sel"],
+        badges: [{ text: "礦石包鑲", type: "craft" }, { text: "情緒彈性", type: "sel" }]
+      },
+      {
+        week: "第13週",
+        title: "作品微攝影與數位足跡",
+        content: "學習運用手機自然光拍攝飾品細節與簡易修圖；認識網路社群分享的隱私保護與數位足跡安全，安心展示成果。",
+        tags: ["digital"],
+        badges: [{ text: "手機微攝影", type: "digital" }, { text: "隱私安全", type: "digital" }]
+      },
+      {
+        week: "第14週",
+        title: "花開富貴・立體花朵胸針",
+        content: "綜合運用繞線、編織與珠飾點綴，製作立體花卉胸針。鼓勵跨世代學員互相讚美彼此作品，營造溫暖支持氛圍。",
+        tags: ["craft", "sel"],
+        badges: [{ text: "立體花卉", type: "craft" }, { text: "正向回饋", type: "sel" }]
+      },
+      {
+        week: "第15週",
+        title: "創意發想・個人畢業專題設計",
+        content: "整合所學技法與網路搜尋資源，獨立規劃一件代表個人故事的畢業創作，與講師一對一討論結構與材料配置。",
+        tags: ["craft", "digital"],
+        badges: [{ text: "專題規劃", type: "craft" }, { text: "資源整合", type: "digital" }]
+      },
+      {
+        week: "第16週",
+        title: "匠心獨具・專題實作與指導",
+        content: "進入畢業專題製作階段，針對個人設計難點進行個別指導與精修，培養堅持到底的毅力與自我肯定感。",
+        tags: ["craft", "sel"],
+        badges: [{ text: "個別精修", type: "craft" }, { text: "自我肯定", type: "sel" }]
+      },
+      {
+        week: "第17週",
+        title: "賦予靈魂・作品故事與展演彩排",
+        content: "完成專題收尾與包裝；撰寫作品背後的情緒與創作故事，並進行成果展發表彩排，建立上台自信心。",
+        tags: ["sel", "local"],
+        badges: [{ text: "故事書寫", type: "sel" }, { text: "自信表達", type: "local" }]
+      },
+      {
+        week: "第18週",
+        title: "「金絲織夢」跨齡藝廊成果展",
+        content: "舉辦靜態作品展覽與動態走秀分享，邀請親友與社區民眾共襄盛舉，展現18週的學習豐碩成果與生命光彩。",
+        tags: ["local", "sel"],
+        isExhibitionWeek: true,
+        badges: [{ text: "期末成果展", type: "local" }, { text: "社區共榮", type: "local" }]
+      }
+    ];
+
+    // 徽章樣式對應表
+    const badgeStyles = {
+      craft: "bg-copper-soft text-copper-dark border-copper/25",
+      sel: "bg-sage-soft text-sage-dark border-sage/25",
+      digital: "bg-brass-soft text-brass-dark border-brass/25",
+      local: "bg-terracotta-soft text-terracotta border-terracotta/25"
+    };
+
+    const syllabusBody = document.getElementById('syllabusBody');
+
+    // 渲染課綱表格
+    function renderSyllabus(filter = 'all') {
+      syllabusBody.innerHTML = '';
+
+      const filtered = syllabusData.filter(item => {
+        if (filter === 'all') return true;
+        if (item.isCivicWeek) return true; // 第9週公民素養週始終顯示以保持時序完整
+        return item.tags.includes(filter);
+      });
+
+      filtered.forEach(item => {
+        const tr = document.createElement('tr');
+
+        if (item.isCivicWeek) {
+          // 第9週 公民素養週 特殊橫幅列樣式
+          tr.className = "bg-cream/80 hover:bg-cream transition-colors print-break-inside";
+          tr.innerHTML = `
+            <td class="py-4 px-4 sm:px-6 font-serif font-bold text-charcoal-muted whitespace-nowrap">${item.week}</td>
+            <td class="py-4 px-4 sm:px-6 font-serif font-bold text-charcoal">${item.title}</td>
+            <td class="py-4 px-4 sm:px-6 text-charcoal-muted italic font-medium">${item.content}</td>
+          `;
+        } else if (item.isExhibitionWeek) {
+          // 第18週 成果展 亮點強調列
+          tr.className = "bg-gradient-to-r from-brass-soft/80 via-copper-soft/50 to-brass-soft/80 hover:bg-brass-soft transition-colors print-break-inside";
+          const badgesHtml = item.badges.map(b => 
+            `<span class="inline-block px-2 py-0.5 rounded-md text-xs font-medium border ${badgeStyles[b.type]}">${b.text}</span>`
+          ).join(' ');
+
+          tr.innerHTML = `
+            <td class="py-4 px-4 sm:px-6 font-serif font-bold text-brass-dark whitespace-nowrap align-top">${item.week}</td>
+            <td class="py-4 px-4 sm:px-6 align-top">
+              <div class="font-serif font-bold text-charcoal text-base sm:text-lg mb-1.5">✨ ${item.title}</div>
+              <div class="flex flex-wrap gap-1.5 no-print">${badgesHtml}</div>
+            </td>
+            <td class="py-4 px-4 sm:px-6 text-charcoal leading-relaxed align-top font-medium">${item.content}</td>
+          `;
+        } else {
+          // 一般教學週次
+          tr.className = "hover:bg-linen/80 transition-colors print-break-inside";
+          const badgesHtml = item.badges.map(b => 
+            `<span class="inline-block px-2 py-0.5 rounded-md text-xs font-medium border ${badgeStyles[b.type]}">${b.text}</span>`
+          ).join(' ');
+
+          tr.innerHTML = `
+            <td class="py-4 px-4 sm:px-6 font-serif font-bold text-copper-dark whitespace-nowrap align-top">${item.week}</td>
+            <td class="py-4 px-4 sm:px-6 align-top">
+              <div class="font-bold text-charcoal mb-1.5">${item.title}</div>
+              <div class="flex flex-wrap gap-1.5 no-print">${badgesHtml}</div>
+            </td>
+            <td class="py-4 px-4 sm:px-6 text-charcoal-muted leading-relaxed align-top">${item.content}</td>
+          `;
+        }
+
+        syllabusBody.appendChild(tr);
+      });
+    }
+
+    // 初始渲染全部18週
+    renderSyllabus('all');
+
+    // 篩選按鈕互動邏輯
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // 重設所有按鈕樣式
+        filterButtons.forEach(b => {
+          b.classList.remove('active', 'bg-charcoal', 'text-linen');
+          b.classList.add('bg-white', 'text-charcoal-muted');
+        });
+        // 啟用當前點擊按鈕
+        btn.classList.add('active', 'bg-charcoal', 'text-linen');
+        btn.classList.remove('bg-white', 'text-charcoal-muted');
+
+        const selectedFilter = btn.getAttribute('data-filter');
+        renderSyllabus(selectedFilter);
+      });
+    });
+
+    // 樂齡友善：字體大小切換功能 (標準 16px / 放大 19px)
+    const fontSizeToggle = document.getElementById('fontSizeToggle');
+    const fontSizeLabel = document.getElementById('fontSizeLabel');
+    let isLargeFont = false;
+
+    fontSizeToggle.addEventListener('click', () => {
+      isLargeFont = !isLargeFont;
+      if (isLargeFont) {
+        document.documentElement.classList.add('font-large');
+        fontSizeLabel.textContent = '字體：放大';
+        fontSizeToggle.classList.add('bg-brass-soft', 'border-brass');
+      } else {
+        document.documentElement.classList.remove('font-large');
+        fontSizeLabel.textContent = '字體：標準';
+        fontSizeToggle.classList.remove('bg-brass-soft', 'border-brass');
+      }
+    });
+  </script>
+</body>
+</html>
